@@ -1,0 +1,1 @@
+In this project, I'll be starting my React career by learning about webpack!
