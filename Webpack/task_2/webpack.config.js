@@ -15,10 +15,15 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
-        type: 'asset/resource',
-        generator: {
-          filename: 'images/[name][ext]'
-        }
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              disable: true,  // You can set it to true for development
+            },
+          },
+        ],
       },
     ],
   },
