@@ -1,2 +1,17 @@
-Webpack/task_0/dist/main.js
-Webpack/task_0/node_modules/
+# Node modules
+node_modules/
+
+# Dist directory (specifically for main.js in task_0)
+task_0/dist/main.js
+
+# Public directory with generated files
+**/public/bundle.js
+**/public/bundle.js.LICENSE.txt
+
+# Editor directories
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
