@@ -6,14 +6,14 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    static: path.join(__dirname, 'public'),
+    contentBase: path.join(__dirname, 'public'),
     port: 8564,
     open: true
   },
   entry: {
-    header: './header/header.js',
-    body: './body/body.js',
-    footer: './footer/footer.js'
+    header: './modules/header/header.js',
+    body: './modules/body/body.js',
+    footer: './modules/footer/footer.js'
   },
   output: {
     filename: '[name].bundle.js',
