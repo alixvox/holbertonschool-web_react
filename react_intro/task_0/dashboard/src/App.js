@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} alt="Holberton Logo" />
+        <img src={logo} alt="Holberton Logo" style={{ height: '200px' }} />
         <h1>
           School dashboard
         </h1>
