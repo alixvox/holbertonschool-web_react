@@ -12,6 +12,15 @@ function App() {
       </header>
       <div className="App-body">
         <p>Login to access the full dashboard</p>
+        <div className="App-login">
+          <label htmlFor="email">Email: </label>
+          <input type="email" id="email" name="email" />
+          <br />
+          <label htmlFor="password">Password: </label>
+          <input type="password" id="password" name="password" />
+          <br />
+          <button>OK</button>
+        </div>
       </div>
       <footer className="App-footer">
         <p>{getFooterCopy(false)}</p>

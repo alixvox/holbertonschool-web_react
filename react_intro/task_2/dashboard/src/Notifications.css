@@ -1,0 +1,16 @@
+/* task_2/dashboard/src/Notifications.css */
+
+.Notifications {
+  border: 1px dotted red;
+  padding: 10px;
+  margin: 10px 0;
+  position: relative;
+}
+
+li[data-priority="default"] {
+  color: blue;
+}
+
+li[data-priority="urgent"] {
+  color: red;
+}
