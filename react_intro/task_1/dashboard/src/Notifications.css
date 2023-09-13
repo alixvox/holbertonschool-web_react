@@ -1,6 +1,8 @@
+/* task_1/dashboard/src/Notifications.css */
+
 .Notifications {
-  border: 2px solid #e0344a;
-  padding: 10px;
-  margin: 10px 0;
-  width: fit-content;
-}
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
