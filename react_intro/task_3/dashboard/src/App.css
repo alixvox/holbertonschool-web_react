@@ -1,0 +1,52 @@
+.App {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+body, .App {
+  background-color: #FFFFFF;
+}
+
+
+.App-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  color: white;
+  border-bottom: 3px solid red;
+}
+
+.App-header h1 {
+  color: red;
+}
+
+.App-login {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+}
+
+.App-header img {
+  height: 250px;
+  margin-right: 20px;
+}
+
+.App-body {
+  flex: 1;
+  padding: 20px;
+  border-bottom: 3px solid red;
+}
+
+.App-footer {
+  padding: 10px 20px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.App-footer p {
+  font-style: italic;
+}
