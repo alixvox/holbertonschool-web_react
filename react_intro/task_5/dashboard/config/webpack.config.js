@@ -37,12 +37,6 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './dist/index.html',
-      inject: 'body'  // This ensures the script is placed at the end of the body section
-    })
-  ],
   devServer: {
     static: path.join(__dirname, '../dist'),
     compress: true,
