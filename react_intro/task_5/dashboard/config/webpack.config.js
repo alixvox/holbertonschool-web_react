@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: '../src/index.js',
+  entry: path.resolve(__dirname, '../src/index.js'),
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.js'
@@ -25,8 +25,17 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|ico)$/i,
-        use: 'image-webpack-loader'
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              disable: true, // set to true if you're in development mode to boost performance
+            },
+          },
+        ],
       }
+      
     ]
   },
   plugins: [

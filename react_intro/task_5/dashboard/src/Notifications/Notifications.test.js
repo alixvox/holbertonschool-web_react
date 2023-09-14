@@ -1,5 +1,6 @@
 // task_5/dashboard/src/Notifications/Notifications.test.js
 
+import React from 'react';
 import { shallow } from 'enzyme';
 import Notifications from './Notifications';
 
