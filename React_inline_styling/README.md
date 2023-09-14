@@ -1,0 +1,1 @@
+In this project, I'll be learning about how to do inline styling in React!
