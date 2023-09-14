@@ -10,7 +10,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/, // This regex will match both .js and .jsx files
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -35,7 +35,6 @@ module.exports = {
           },
         ],
       }
-      
     ]
   },
   plugins: [
@@ -44,15 +43,13 @@ module.exports = {
     })
   ],
   devServer: {
-    static: {
-        directory: path.join(__dirname, '../dist'),
-    },
+    static: path.join(__dirname, '../dist'),
     compress: true,
     port: 9000,
     hot: true
   },
   resolve: {
-    extensions: ['.js', '.jsx'] // This will allow you to import files without specifying the .js or .jsx extension
+    extensions: ['.js', '.jsx']
   },
   devtool: 'inline-source-map',
 };
