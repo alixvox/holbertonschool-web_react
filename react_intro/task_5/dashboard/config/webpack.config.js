@@ -39,7 +39,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: '../dist/index.html'
+      template: './dist/index.html',
+      inject: 'body'  // This ensures the script is placed at the end of the body section
     })
   ],
   devServer: {
