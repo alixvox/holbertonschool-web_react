@@ -1,0 +1,18 @@
+/* task_5/dashboard/src/App/App.css */
+
+.App {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+body, .App {
+  background-color: #FFFFFF;
+}
+
+.App-body {
+  flex: 1;
+  padding: 20px;
+  border-bottom: 3px solid red;
+}
