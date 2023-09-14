@@ -53,5 +53,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'] // This will allow you to import files without specifying the .js or .jsx extension
-  }
+  },
+  devtool: 'inline-source-map',
 };
