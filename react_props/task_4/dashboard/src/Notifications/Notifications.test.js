@@ -1,20 +1,24 @@
-import React from 'react';
+// Add these imports:
 import { shallow } from 'enzyme';
 import Notifications from './Notifications';
 import NotificationItem from './NotificationItem';
 
+// Then, update your tests:
+
 describe('<Notifications />', () => {
-    it('renders without crashing', () => {
-        shallow(<Notifications />);
-    });
+  it('renders without crashing', () => {
+    shallow(<Notifications />);
+  });
 
-    it('renders three NotificationItem components', () => {
-        const wrapper = shallow(<Notifications />);
-        expect(wrapper.find(NotificationItem).length).toBe(3);
-    });
+  it('menu item is displayed when displayDrawer is false', () => {
+    const wrapper = shallow(<Notifications />);
+    expect(wrapper.find('.menuItem')).toHaveLength(1);
+    expect(wrapper.find('.Notifications')).toHaveLength(0);
+  });
 
-    it('renders the text "Here is the list of notifications"', () => {
-        const wrapper = shallow(<Notifications />);
-        expect(wrapper.find('.Notifications p').text()).toEqual('Here is the list of notifications');
-    });
+  it('menu item and div.Notifications are displayed when displayDrawer is true', () => {
+    const wrapper = shallow(<Notifications displayDrawer={true} />);
+    expect(wrapper.find('.menuItem')).toHaveLength(1);
+    expect(wrapper.find('.Notifications')).toHaveLength(1);
+  });
 });
