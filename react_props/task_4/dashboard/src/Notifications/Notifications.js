@@ -5,14 +5,15 @@ import './Notifications.css';
 import NotificationItem from './NotificationItem';
 import closeIcon from '../assets/close-icon.png';
 import { getLatestNotification } from '../utils/utils';
+import PropTypes from 'prop-types';
 
 function Notifications({ displayDrawer = false }) {
   return (
-    <div className="Notifications">
+    <div className="NotificationsContainer" data-display-drawer={displayDrawer ? "true" : "false"}>
+      <div className="menuItem">Your notifications</div>
       {displayDrawer && (
         <>
-          <div className="menuItem">Your notifications</div>
-          <div className="Notifications">
+          <div className="NotificationsContent">
             <button
               style={{ position: 'absolute', right: '10px', top: '10px' }}
               aria-label="Close"
