@@ -8,7 +8,7 @@ import { getLatestNotification } from '../utils/utils';
 
 function Notifications({ listNotifications = [], displayDrawer = false }) {
   return (
-    <div className="NotificationsContainer" data-display-drawer={displayDrawer ? "true" : "false"}>
+    <div className="Notifications" data-display-drawer={displayDrawer ? "true" : "false"}>
       <div className="menuItem">Your notifications</div>
       {displayDrawer && (
         <div className="NotificationsContent">
