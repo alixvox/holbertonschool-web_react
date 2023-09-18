@@ -14,7 +14,7 @@ function Login() {
   return (
     <React.Fragment>
       <p>Login to access the full dashboard</p>
-      <div className="App-login">
+      <div className={css(styles.login)}> {/* <-- Apply the Aphrodite style here */}
         <label htmlFor="email">Email: </label>
         <input type="email" id="email" name="email" />
         <br />
