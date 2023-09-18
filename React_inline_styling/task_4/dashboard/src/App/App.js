@@ -36,7 +36,17 @@ const styles = StyleSheet.create({
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      displayDrawer: false
+    };
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.toggleDisplayDrawer = this.toggleDisplayDrawer.bind(this);
+  }
+
+  toggleDisplayDrawer() {
+    this.setState(prevState => ({
+      displayDrawer: !prevState.displayDrawer
+    }));
   }
 
   componentDidMount() {
@@ -71,7 +81,11 @@ class App extends Component {
 
     return (
       <div className={css(styles.container)}>
-        <Notifications listNotifications={listNotifications} />
+        <Notifications 
+        listNotifications={listNotifications} 
+        displayDrawer={this.state.displayDrawer} 
+        toggleDisplayDrawer={this.toggleDisplayDrawer}
+        />
         <div className={css(styles.app)}>
           <Header />
           <div className={css(styles.appBody)}>

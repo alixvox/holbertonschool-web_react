@@ -63,17 +63,28 @@ const styles = StyleSheet.create({
 class Notifications extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+        displayDrawer: this.props.displayDrawer,
+    };
     this.markAsRead = this.markAsRead.bind(this);
+    this.toggleDisplayDrawer = this.toggleDisplayDrawer.bind(this); // bind the method
+  }
+  
+  toggleDisplayDrawer() {
+    this.setState(prevState => ({
+        displayDrawer: !prevState.displayDrawer
+    }));
   }
 
   markAsRead(id) {
     console.log(`Notification ${id} has been marked as read`);
   }
   render() {
-    const { listNotifications, displayDrawer } = this.props;
+    const { listNotifications } = this.props;
+    const { displayDrawer } = this.state;
     return (
       <div className={css(styles.notificationsContainer, displayDrawer ? conditionalStyles.displayNone : conditionalStyles.displayBlock)} data-display-drawer={displayDrawer ? "true" : "false"}>
-        {!displayDrawer && <div className={css(styles.menuItem)}>Your notifications</div>}
+      {!this.props.displayDrawer && <div className={css(styles.menuItem)} onClick={this.props.toggleDisplayDrawer}>Your notifications</div>}
         {displayDrawer && (
           <div className={css(styles.notifications)}>
             <button
