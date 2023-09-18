@@ -5,6 +5,16 @@ import NotificationItem from './NotificationItem';
 import { StyleSheet, css } from 'aphrodite';
 import closeIcon from '../assets/close-icon.png';
 import { getLatestNotification } from '../utils/utils';
+import './animations.css';
+
+const conditionalStyles = StyleSheet.create({
+  displayNone: {
+    display: 'none',
+  },
+  displayBlock: {
+    display: 'block',
+  },
+});
 
 const styles = StyleSheet.create({
   notifications: {
@@ -28,7 +38,19 @@ const styles = StyleSheet.create({
     padding: '10px',
     backgroundColor: '#f5f5f5',
     borderBottom: '1px solid #ddd',
-    textAlign: 'right', // align text to the right
+    textAlign: 'right',
+    position: 'fixed', // make it float over every element
+    right: '10px', // position it to the right
+    top: '10px', // position it to the top
+    backgroundColor: '#fff8f8',
+    ':hover': {
+      animationName: 'opacityChange, bounce',
+      animationDuration: '1s, 0.5s',
+      animationIterationCount: '3, 3',
+    },
+  },
+  notificationsContainer: {
+    // ... (your existing styles for notificationsContainer)
   },
   defaultNotification: {
     color: 'rgb(1, 1, 170)',
@@ -50,8 +72,8 @@ class Notifications extends React.Component {
   render() {
     const { listNotifications, displayDrawer } = this.props;
     return (
-      <div className={css(styles.notificationsContainer)} data-display-drawer={displayDrawer ? "true" : "false"}>
-        <div className={css(styles.menuItem)}>Your notifications</div>
+      <div className={css(styles.notificationsContainer, displayDrawer ? conditionalStyles.displayNone : conditionalStyles.displayBlock)} data-display-drawer={displayDrawer ? "true" : "false"}>
+        {!displayDrawer && <div className={css(styles.menuItem)}>Your notifications</div>}
         {displayDrawer && (
           <div className={css(styles.notifications)}>
             <button
@@ -63,7 +85,7 @@ class Notifications extends React.Component {
             </button>
             <p>Here is the list of notifications</p>
             <ul className={css(styles.ul)}>
-              {this.props.listNotifications.length === 0 ? (
+              {listNotifications.length === 0 ? (
                 <NotificationItem type="default" value="No new notification for now" />
               ) : (
                 listNotifications.map(notification => (
@@ -76,7 +98,7 @@ class Notifications extends React.Component {
       </div>
     );
   }
-  static defaultProps = {
+    static defaultProps = {
     listNotifications: [],
     displayDrawer: false
   };

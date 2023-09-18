@@ -1,6 +1,6 @@
 import React from 'react';
 import { getFullYear, getFooterCopy } from '../utils/utils';
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet, css } from 'aphrodite/no-important';
 
 const styles = StyleSheet.create({
   footer: {
