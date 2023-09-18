@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     justifyContent: 'left',
     alignItems: 'center',
     gap: '10px',
+    margin: '0',
   },
 });
 
