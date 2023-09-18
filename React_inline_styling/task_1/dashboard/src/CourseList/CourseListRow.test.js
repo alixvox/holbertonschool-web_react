@@ -3,9 +3,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import CourseListRow from './CourseListRow';
-import { StyleSheetTestUtils } from 'aphrodite';
-
-StyleSheetTestUtils.suppressStyleInjection();
 
 describe('<CourseListRow />', () => {
   it('renders without crashing', () => {
@@ -26,9 +23,4 @@ describe('<CourseListRow />', () => {
     const wrapper = shallow(<CourseListRow isHeader={false} textFirstCell="test1" textSecondCell="test2" />);
     expect(wrapper.find('td')).toHaveLength(2);
   });
-
-  afterAll(() => {
-  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
-});
-
 });

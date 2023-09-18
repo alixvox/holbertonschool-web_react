@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CourseList from './CourseList';
-import CourseListRow from './CourseListRow';
+import CourseList from '../../../../task_0/dashboard/src/CourseList/CourseList';
+import CourseListRow from '../../../../task_0/dashboard/src/CourseList/CourseListRow';
 
 describe('<CourseList />', () => {
   const listCourses = [
