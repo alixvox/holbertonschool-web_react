@@ -2,6 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import CourseList from './CourseList';
 import CourseListRow from './CourseListRow';
+import { StyleSheetTestUtils } from 'aphrodite';
+
+StyleSheetTestUtils.suppressStyleInjection();
 
 describe('<CourseList />', () => {
   const listCourses = [
@@ -24,4 +27,9 @@ describe('<CourseList />', () => {
     const wrapper = shallow(<CourseList listCourses={listCourses} />);
     expect(wrapper.find(CourseListRow)).toHaveLength(5); // 1 for header and 3 for courses
   });
+
+  afterAll(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+  });
+
 });
