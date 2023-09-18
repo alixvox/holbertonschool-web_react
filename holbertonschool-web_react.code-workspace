@@ -1,0 +1,137 @@
+{
+	"folders": [
+    {
+      "path": "."
+    },
+    {
+      "name": "dashboard",
+      "path": "react_props/task_5/dashboard"
+    },
+    {
+      "name": "dashboard",
+      "path": "react_props/task_4/dashboard"
+    },
+    {
+      "name": "dashboard",
+      "path": "react_props/task_2/dashboard"
+    },
+    {
+      "name": "dashboard",
+      "path": "react_props/task_1/dashboard"
+    },
+    {
+      "name": "dashboard",
+      "path": "react_props/task_0/dashboard"
+    },
+    {
+      "name": "dashboard",
+      "path": "react_intro/task_5/dashboard"
+    },
+    {
+      "name": "dashboard",
+      "path": "react_intro/task_4/dashboard"
+    },
+    {
+      "name": "dashboard",
+      "path": "react_intro/task_3/dashboard"
+    },
+    {
+      "name": "dashboard",
+      "path": "react_intro/task_2/dashboard"
+    },
+    {
+      "name": "dashboard",
+      "path": "react_intro/task_1/dashboard"
+    },
+    {
+      "name": "dashboard",
+      "path": "react_intro/task_0/dashboard"
+    },
+    {
+      "name": "task_3",
+      "path": "Webpack/task_3"
+    },
+    {
+      "name": "task_2",
+      "path": "Webpack/task_2"
+    },
+    {
+      "name": "task_1",
+      "path": "Webpack/task_1"
+    },
+    {
+      "name": "task_0",
+      "path": "Webpack/task_0"
+    },
+    {
+      "name": "dashboard",
+      "path": "React_inline_styling/task_0/dashboard"
+    },
+    {
+      "name": "dashboard",
+      "path": "React_component/task_5/dashboard"
+    },
+    {
+      "name": "dashboard",
+      "path": "React_component/task_4/dashboard"
+    },
+    {
+      "name": "dashboard",
+      "path": "React_component/task_3/dashboard"
+    },
+    {
+      "name": "dashboard",
+      "path": "React_component/task_2/dashboard"
+    },
+    {
+      "name": "dashboard",
+      "path": "React_component/task_1/dashboard"
+    },
+    {
+      "name": "dashboard",
+      "path": "React_component/task_0/dashboard"
+    },
+    {
+      "name": "task_5",
+      "path": "0x04-TypeScript/task_5"
+    },
+    {
+      "name": "task_4",
+      "path": "0x04-TypeScript/task_4"
+    },
+    {
+      "name": "task_3",
+      "path": "0x04-TypeScript/task_3"
+    },
+    {
+      "name": "task_2",
+      "path": "0x04-TypeScript/task_2"
+    },
+    {
+      "name": "task_1",
+      "path": "0x04-TypeScript/task_1"
+    },
+    {
+      "name": "task_0",
+      "path": "0x04-TypeScript/task_0"
+    }
+  ],
+  "settings": {
+    "jest.disabledWorkspaceFolders": [
+      "holbertonschool-web_react",
+      "dashboard",
+      "dashboard",
+      "dashboard",
+      "task_3",
+      "task_2",
+      "task_1",
+      "task_0",
+      "task_5",
+      "task_4",
+      "task_3",
+      "task_2",
+      "task_1",
+      "task_0"
+    ]
+  }
+}
