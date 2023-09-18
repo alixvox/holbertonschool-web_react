@@ -2,6 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Notifications from './Notifications';
 import NotificationItem from './NotificationItem';
+import { StyleSheetTestUtils } from 'aphrodite';
+
+StyleSheetTestUtils.suppressStyleInjection();
 
 describe('<Notifications />', () => {
   const listNotifications = [
@@ -57,5 +60,10 @@ describe('<Notifications />', () => {
     const shouldUpdate = wrapper.instance().shouldComponentUpdate({ listNotifications: longerList });
     expect(shouldUpdate).toBe(true);
   });
+  
+  afterAll(() => {
+    // Stop suppressing style injection.
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+  });  
 
 });

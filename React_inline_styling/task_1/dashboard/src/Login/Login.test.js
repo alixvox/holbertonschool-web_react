@@ -1,6 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Login from './Login';
+import { StyleSheetTestUtils } from 'aphrodite';
+
+StyleSheetTestUtils.suppressStyleInjection();
 
 describe('<Login />', () => {
   it('renders without crashing', () => {
@@ -12,4 +15,10 @@ describe('<Login />', () => {
     expect(wrapper.find('input')).toHaveLength(2);
     expect(wrapper.find('label')).toHaveLength(2);
   });
+
+  afterAll(() => {
+    // Stop suppressing style injection.
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+  });  
+
 });

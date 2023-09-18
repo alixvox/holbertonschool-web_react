@@ -24,4 +24,5 @@ describe('<BodySectionWithMarginBottom />', () => {
     // Stop suppressing style injection.
     StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
   });
+
 });
