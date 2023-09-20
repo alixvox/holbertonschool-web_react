@@ -111,7 +111,8 @@ class Notifications extends React.Component {
   }
     static defaultProps = {
     listNotifications: [],
-    displayDrawer: false
+    displayDrawer: false,
+    handleDisplayDrawer: () => {},
   };
   
   shouldComponentUpdate(nextProps) {

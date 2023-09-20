@@ -87,7 +87,7 @@ class App extends Component {
         <Notifications 
         listNotifications={listNotifications} 
         displayDrawer={this.state.displayDrawer} 
-        handleDisplayDrawer={() => {}}
+        handleDisplayDrawer={this.handleDisplayDrawer}
         handleHideDrawer={this.handleHideDrawer}
         />
         <div className={css(styles.app)}>
