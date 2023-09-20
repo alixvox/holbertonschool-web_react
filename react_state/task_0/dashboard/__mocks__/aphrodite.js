@@ -3,8 +3,7 @@ module.exports = {
     create: styles => styles,
   },
   css: () => '',
-};
-
-export const StyleSheetTestUtils = {
-  suppressStyleInjection: jest.fn(),
+  StyleSheetTestUtils: {
+    suppressStyleInjection: jest.fn(),
+  },
 };

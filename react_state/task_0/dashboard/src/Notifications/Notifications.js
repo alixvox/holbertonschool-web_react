@@ -126,6 +126,8 @@ class Notifications extends React.Component {
 Notifications.propTypes = {
   listNotifications: PropTypes.arrayOf(NotificationItemShape),
   displayDrawer: PropTypes.bool,
+  handleDisplayDrawer: PropTypes.func.isRequired,
+  handleHideDrawer: PropTypes.func.isRequired,
 };
 
 export default Notifications;
