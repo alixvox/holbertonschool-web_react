@@ -80,11 +80,11 @@ class Notifications extends React.Component {
     console.log(`Notification ${id} has been marked as read`);
   }
   render() {
-    const { listNotifications } = this.props;
+    const { listNotifications, handleDisplayDrawer } = this.props;
     const { displayDrawer } = this.state;
     return (
       <div className={css(styles.notificationsContainer, displayDrawer ? conditionalStyles.displayNone : conditionalStyles.displayBlock)} data-display-drawer={displayDrawer ? "true" : "false"}>
-        {!this.props.displayDrawer && <div className={css(styles.menuItem)} onClick={this.props.handleDisplayDrawer}>Your notifications</div>}
+        {!displayDrawer && <div className={css(styles.menuItem)} onClick={handleDisplayDrawer}>Your notifications</div>}
         {displayDrawer && (
           <div className={css(styles.notifications)}>
             <button
