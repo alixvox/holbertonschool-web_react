@@ -80,7 +80,7 @@ class Notifications extends React.Component {
     console.log(`Notification ${id} has been marked as read`);
   }
   render() {
-    const { listNotifications, handleDisplayDrawer } = this.props;
+    const { listNotifications, handleDisplayDrawer, handleHideDrawer } = this.props;
     const { displayDrawer } = this.state;
     return (
       <div className={css(styles.notificationsContainer, displayDrawer ? conditionalStyles.displayNone : conditionalStyles.displayBlock)} data-display-drawer={displayDrawer ? "true" : "false"}>
@@ -90,7 +90,7 @@ class Notifications extends React.Component {
             <button
               style={{ position: 'absolute', right: '10px', top: '10px' }}
               aria-label="Close"
-              onClick={this.props.handleHideDrawer}
+              onClick={handleHideDrawer}
             >
               <img src={closeIcon} alt="Close icon" width="15px" />
             </button>
