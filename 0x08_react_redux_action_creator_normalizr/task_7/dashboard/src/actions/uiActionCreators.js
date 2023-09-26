@@ -7,6 +7,7 @@ import {
   LOGIN_FAILURE,
 } from './uiActionTypes';
 import 'isomorphic-fetch';
+import { useDispatch } from 'react-redux';
 
 export function login(email, password) {
   return {

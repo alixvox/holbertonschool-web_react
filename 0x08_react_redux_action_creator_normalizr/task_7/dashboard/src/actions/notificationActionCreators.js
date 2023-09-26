@@ -1,4 +1,5 @@
 import { MARK_AS_READ, SET_TYPE_FILTER } from './notificationActionTypes';
+import { useDispatch } from 'react-redux';
 
 export function markAsAread(index) {
   return {
