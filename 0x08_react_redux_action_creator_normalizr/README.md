@@ -1,0 +1,1 @@
+In this project, I'll be going into more in-depth concepts with React.
