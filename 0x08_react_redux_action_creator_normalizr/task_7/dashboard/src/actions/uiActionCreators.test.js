@@ -1,15 +1,60 @@
-import {
-  login,
-  logout,
-  displayNotificationDrawer,
-  hideNotificationDrawer,
-} from './uiActionCreators';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 import {
   LOGIN,
   LOGOUT,
   DISPLAY_NOTIFICATION_DRAWER,
   HIDE_NOTIFICATION_DRAWER,
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE,
 } from './uiActionTypes';
+import {
+  login,
+  logout,
+  loginRequest,
+  displayNotificationDrawer,
+  hideNotificationDrawer,
+} from './uiActionCreators'; // Adjust the path if needed
+
+import fetch, { enableFetchMocks } from 'jest-fetch-mock';
+enableFetchMocks();
+
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
+
+describe('loginRequest Action Creator', () => {
+  beforeEach(() => {
+    fetch.resetMocks();
+  });
+
+  it('dispatches LOGIN_SUCCESS when fetching login has been done', () => {
+    fetch.mockResponseOnce(JSON.stringify({ user: 'user' }));
+
+    const expectedActions = [
+      { type: LOGIN, user: { email: 'user', password: 'password' } },
+      { type: LOGIN_SUCCESS },
+    ];
+    const store = mockStore({});
+
+    return store.dispatch(loginRequest('user', 'password')).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+
+  it('dispatches LOGIN_FAILURE when fetching login fails', () => {
+    fetch.mockReject(new Error('fake error message'));
+
+    const expectedActions = [
+      { type: LOGIN, user: { email: 'user', password: 'password' } },
+      { type: LOGIN_FAILURE },
+    ];
+    const store = mockStore({});
+
+    return store.dispatch(loginRequest('user', 'password')).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+});
 
 describe('uiActionCreators', () => {
   it('login creates an action to login a user', () => {
