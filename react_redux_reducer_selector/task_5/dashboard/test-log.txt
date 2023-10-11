@@ -1,0 +1,23 @@
+
+> dashboard@1.0.0 test
+> jest
+
+PASS src/schema/notifiations.test.js
+PASS src/App/App.test.js
+PASS src/utils/utils.test.js
+PASS src/Notifications/Notifications.test.js
+PASS src/Header/Header.test.js
+PASS src/HOC/WithLogging.test.js
+PASS src/Login/Login.test.js
+PASS src/CourseList/CourseList.test.js
+PASS src/Footer/Footer.test.js
+PASS src/Notifications/NotificationItem.test.js
+PASS src/CourseList/CourseListRow.test.js
+PASS src/BodySection/BodySection.test.js
+PASS src/BodySection/BodySectionWithMarginBottom.test.js
+
+Test Suites: 13 passed, 13 total
+Tests:       54 passed, 54 total
+Snapshots:   0 total
+Time:        3.892 s
+Ran all test suites.
