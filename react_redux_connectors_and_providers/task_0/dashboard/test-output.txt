@@ -2,28 +2,258 @@
 > dashboard@1.0.0 test
 > jest
 
-PASS src/BodySection/BodySectionWithMarginBottom.test.js
-PASS src/reducers/courseReducer.test.js
-PASS src/Header/Header.test.js
-PASS src/schema/notifiations.test.js
-PASS src/CourseList/CourseListRow.test.js
-PASS src/CourseList/CourseList.test.js
-PASS src/Notifications/NotificationItem.test.js
-PASS src/Login/Login.test.js
-PASS src/reducers/uiReducer.test.js
-PASS src/HOC/WithLogging.test.js
-PASS src/Footer/Footer.test.js
-PASS src/Notifications/Notifications.test.js
-PASS src/App/App.test.js
-PASS src/actions/uiActionCreators.test.js
-PASS src/reducers/notificationReducer.test.js
-PASS src/utils/utils.test.js
+PASS src/CourseList/CourseListRow.test.js (6.652 s)
+PASS src/schema/notifiations.test.js (6.657 s)
+PASS src/HOC/WithLogging.test.js (6.659 s)
+PASS src/Login/Login.test.js (6.666 s)
+PASS src/BodySection/BodySectionWithMarginBottom.test.js (6.683 s)
+PASS src/selectors/notificationSelector.test.js (6.699 s)
+PASS src/CourseList/CourseList.test.js (6.712 s)
+PASS src/Footer/Footer.test.js (6.711 s)
+PASS src/reducers/courseReducer.test.js (6.714 s)
+PASS src/reducers/notificationReducer.test.js (6.718 s)
+PASS src/Header/Header.test.js (6.722 s)
+PASS src/Notifications/NotificationItem.test.js (6.754 s)
+PASS src/Notifications/Notifications.test.js (6.78 s)
+PASS src/actions/uiActionCreators.test.js (7.056 s)
+FAIL src/App/App.test.js (7.226 s)
+  ● Console
+
+    console.log
+      <Provider store={{...}}>
+        <Connect(App)>
+          <App isLoggedIn={false} dispatch={[Function: dispatch]}>
+            <div className="">
+              <Notifications listNotifications={{...}} displayDrawer={false} handleDisplayDrawer={[Function: bound handleDisplayDrawer]} handleHideDrawer={[Function: handleHideDrawer]} markNotificationAsRead={[Function: markNotificationAsRead]}>
+                <div className="" data-display-drawer="false">
+                  <div className="" onClick={[Function: bound handleDisplayDrawer]} data-testid="menuItem">
+                    Your notifications
+                  </div>
+                </div>
+              </Notifications>
+              <div className="">
+                <Header>
+                  <div className="">
+                    <img src="test-file-stub" alt="Holberton Logo" className="" />
+                    <h1 className="">
+                      School dashboard
+                    </h1>
+                  </div>
+                </Header>
+                <div className="">
+                  <BodySectionWithMarginBottom title="Log in to continue">
+                    <div className="">
+                      <BodySection title="Log in to continue">
+                        <div className="">
+                          <h2>
+                            Log in to continue
+                          </h2>
+                          <Login logIn={[Function (anonymous)]}>
+                            <p>
+                              Login to access the full dashboard
+                            </p>
+                            <form onSubmit={[Function: bound handleLoginSubmit]} className="">
+                              <div className="">
+                                <label htmlFor="email">
+                                  Email: 
+                                </label>
+                                <input type="email" id="email" name="email" value="" onChange={[Function: bound handleChangeEmail]} />
+                              </div>
+                              <div className="">
+                                <label htmlFor="password">
+                                  Password: 
+                                </label>
+                                <input type="password" id="password" name="password" value="" onChange={[Function: bound handleChangePassword]} />
+                              </div>
+                              <input type="submit" value="OK" disabled={true} />
+                            </form>
+                          </Login>
+                        </div>
+                      </BodySection>
+                    </div>
+                  </BodySectionWithMarginBottom>
+                  <BodySection title="News from the School">
+                    <div className="">
+                      <h2>
+                        News from the School
+                      </h2>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae quam a dolor euismod ullamcorper. Maecenas a urna eget lorem sodales pulvinar eget vel neque. Praesent nibh est, bibendum quis orci at, semper aliquam arcu. Aliquam pellentesque convallis dolor sed rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam nec cursus risus, auctor rutrum quam. Etiam faucibus lobortis lectus vitae consequat. Cras blandit urna mi, ut rutrum magna auctor quis.
+                      </p>
+                    </div>
+                  </BodySection>
+                </div>
+                <Footer>
+                  <div className="">
+                    <p>
+                      Copyright 
+                      2023
+                       - 
+                      Holberton School
+                    </p>
+                  </div>
+                </Footer>
+              </div>
+            </div>
+          </App>
+        </Connect(App)>
+      </Provider>
+
+      at Object.log (src/App/App.test.js:53:13)
+
+  ● <App /> › contains the CourseList component when logged in
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      52 |     wrapper.update();
+      53 |     console.log(wrapper.debug());
+    > 54 |     expect(wrapper.find('CourseList').exists()).toBe(true);
+         |                                                 ^
+      55 |     expect(wrapper.find('Login').exists()).toBe(false);
+      56 |   });
+      57 |     
+
+      at Object.toBe (src/App/App.test.js:54:49)
+
+  ● <App /> › calls logOut and alert when "control" and "h" keys are pressed
+
+    TypeError: Enzyme::Selector expects a string, object, or Component Constructor
+
+      93 |       </Provider>
+      94 |     );
+    > 95 |     const appWrapper = wrapper.find(App).dive();
+         |                                ^
+      96 |     appWrapper.instance().handleKeyDown({ ctrlKey: true, key: 'h' });
+      97 |     
+      98 |     expect(wrapper.state().user.isLoggedIn).toBe(false);
+
+      at reduceTreeBySelector (node_modules/enzyme/src/selectors.js:451:11)
+      at reduceTreeBySelector (node_modules/enzyme/src/selectors.js:457:36)
+          at Array.map (<anonymous>)
+      at map (node_modules/enzyme/src/selectors.js:457:25)
+      at ReactWrapper.find (node_modules/enzyme/src/ReactWrapper.js:556:22)
+      at Object.find (src/App/App.test.js:95:32)
+
+  ● <App /> › logIn function updates the state correctly
+
+    TypeError: Cannot read properties of null (reading 'logIn')
+
+      109 |     );
+      110 |     const instance = wrapper.instance();
+    > 111 |     instance.logIn('test@email.com', 'password');
+          |              ^
+      112 |
+      113 |     expect(wrapper.state().user).toEqual({
+      114 |       email: 'test@email.com',
+
+      at Object.logIn (src/App/App.test.js:111:14)
+
+  ● <App /> › logOut function updates the state correctly
+
+    ReactWrapper::setState() can only be called on class components
+
+      124 |       </Provider>
+      125 |     );
+    > 126 |     wrapper.setState({ user: { isLoggedIn: true } });
+          |             ^
+      127 |     const instance = wrapper.instance();
+      128 |     instance.logOut();
+      129 |
+
+      at ReactWrapper.setState (node_modules/enzyme/src/ReactWrapper.js:372:13)
+      at Object.setState (src/App/App.test.js:126:13)
+
+  ● <App /> › checks that the default state for displayDrawer is false
+
+    ReactWrapper::state() can only be called on class components
+
+      137 |       </Provider>
+      138 |     );
+    > 139 |     expect(wrapper.state().displayDrawer).toEqual(false);
+          |                    ^
+      140 |   });
+      141 |
+      142 |   it('checks that calling handleDisplayDrawer updates the state', () => {
+
+      at ReactWrapper.state (node_modules/enzyme/src/ReactWrapper.js:725:13)
+      at Object.state (src/App/App.test.js:139:20)
+
+  ● <App /> › checks that calling handleDisplayDrawer updates the state
+
+    TypeError: Cannot read properties of null (reading 'handleDisplayDrawer')
+
+      146 |       </Provider>
+      147 |     );
+    > 148 |     wrapper.instance().handleDisplayDrawer();
+          |                       ^
+      149 |     expect(wrapper.state().displayDrawer).toEqual(true);
+      150 |   });
+      151 |
+
+      at Object.<anonymous> (src/App/App.test.js:148:23)
+
+  ● <App /> › checks that calling handleHideDrawer updates the state
+
+    TypeError: Cannot read properties of null (reading 'handleHideDrawer')
+
+      156 |       </Provider>
+      157 |     );
+    > 158 |     wrapper.instance().handleHideDrawer();
+          |                       ^
+      159 |     expect(wrapper.state().displayDrawer).toEqual(false);
+      160 |   });
+      161 |
+
+      at Object.<anonymous> (src/App/App.test.js:158:23)
+
+  ● <App /> › markNotificationAsRead removes the notification from the list
+
+    ReactWrapper::state() can only be called on class components
+
+      167 |     );
+      168 |     const instance = wrapper.instance();
+    > 169 |     const initialLength = wrapper.state().listNotifications.length;
+          |                                   ^
+      170 |
+      171 |     instance.markNotificationAsRead(1); // Assuming you have a notification with id 1
+      172 |
+
+      at ReactWrapper.state (node_modules/enzyme/src/ReactWrapper.js:725:13)
+      at Object.state (src/App/App.test.js:169:35)
+
+  ● mapStateToProps › should map the state to props correctly
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "isLoggedIn": true,
+    +   "isLoggedIn": undefined,
+      }
+
+      192 |       isLoggedIn: true,
+      193 |     };
+    > 194 |     expect(mapStateToProps(state)).toEqual(expectedOutput);
+          |                                    ^
+      195 |   });
+      196 | });
+      197 |
+
+      at Object.toEqual (src/App/App.test.js:194:36)
+
 PASS src/BodySection/BodySection.test.js
+PASS src/utils/utils.test.js
+PASS src/reducers/uiReducer.test.js
 PASS src/actions/notificationActionCreators.test.js
 PASS src/actions/courseActionCreators.test.js
 
-Test Suites: 19 passed, 19 total
-Tests:       79 passed, 79 total
+Test Suites: 1 failed, 19 passed, 20 total
+Tests:       9 failed, 74 passed, 83 total
 Snapshots:   0 total
-Time:        5.22 s
+Time:        11.431 s
 Ran all test suites.

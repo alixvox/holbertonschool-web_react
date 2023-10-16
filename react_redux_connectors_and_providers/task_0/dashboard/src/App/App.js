@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import CourseList from '../CourseList/CourseList';
 import Notifications from '../Notifications/Notifications';
 import Login from '../Login/Login';
@@ -100,7 +101,7 @@ class App extends Component {
   
   render() {
     const { displayDrawer, user } = this.state;
-
+    const { isLoggedIn } = this.props;
     const listCourses = [
       { id: 1, name: 'ES6', credit: 60 },
       { id: 2, name: 'Webpack', credit: 20 },
@@ -140,4 +141,10 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapStateToProps = (state) => {
+  return {
+    isLoggedIn: state.get('isUserLoggedIn')
+  };
+};
+
+export default connect(mapStateToProps)(App);
